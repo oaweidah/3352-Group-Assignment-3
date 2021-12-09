@@ -1,6 +1,5 @@
 package models;
 
-import views.OneStudentView;
 
 public class Student {	
 	private String studentID;
