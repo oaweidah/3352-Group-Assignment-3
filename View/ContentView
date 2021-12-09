@@ -1,51 +1,42 @@
 package views;
 
-public class ContentView extends models.Observer {
-    private models.Page model;
-    private controllers.PageController controller;
+public class ContentView {
+	//declare variables for view and controller
+	private models.Course model;
+	private controllers.PageController controller;
+	
+	//empty constructor
+	public ContentView() {}
+	
+	public void show() {
+		//display or refresh to show PageController class
+	}
+	
+	//event handler for update
+	public void onCourseUpdate () {
+		//collect data from user
+		
+		//collects a collection of course number and name to be split in the controller
+		String newCourseInfo = "CourseNum - CourseName";
+		
+		//view is updated within controller by calling updateCourse
+		this.controller.updateCourse(newCourseInfo);
+	}
 
-    //set the constructor
-    public ContentView(models.Page model, controllers.PageController controller){
-        this.setModel(model);
-        this.setController(controller);
-        this.model.attach(this);
-    }
+	//setters and getters for Course and CourseController
+	public models.Course getModel() {
+		return model;
+	}
 
-    //display or refresh to show PageController
-    public void update(){
-        this.show();
-    }
+	public void setModel(models.Course model) {
+		this.model = model;
+	}
 
-    //event handler for updating
-    public void onPageUpdate(){
-        String newPageInfo="Select the media type you would like to add: ";
-        //updates view within controller by calling updatePage
-        this.controller.updatePage(newPageInfo);
-    }
+	public controllers.PageController getController() {
+		return controller;
+	}
 
-    public ContentView(){}
-
-    //display/refresh to show PageController
-    public void show(){}
-
-    //setter and getter for Page model
-    public models.Page getModel(){
-        return model;
-    }
-
-    public void setModel(models.Page model){
-        if(this.model!=null)
-            this.model.detach(this);
-
-        this.model = model;
-        this.model.attach(this);
-    }
-
-    //setter and getter for PageController
-    public controllers.PageController getController(){
-        return controller;
-    }
-    public void setController(controllers.PageController controller){
-        this.controller=controller;
-    }
+	public void setController(controllers.PageController controller) {
+		this.controller = controller;
+	}
 }
