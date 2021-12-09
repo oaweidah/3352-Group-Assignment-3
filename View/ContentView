@@ -16,7 +16,7 @@ public class ContentView extends models.Observer {
         this.show();
     }
 
-    //event handler for update
+    //event handler for updating
     public void onPageUpdate(){
         String newPageInfo="Select the media type you would like to add: ";
         //updates view within controller by calling updatePage
