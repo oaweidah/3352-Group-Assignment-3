@@ -1,12 +1,12 @@
 package controllers;
 
-public class CourseController {
+public class PageController {
 //declare variables for view and controller
-	models.Course model;
-	views.LectureContent view;
+	models.Page model;
+	views.ContentView view;
 	
 	//constructor function to access variables
-	public CourseController (models.Course model, views.LectureContent view) {
+	public PageController (models.Page model, views.ContentView view) {
 		this.model = model;
 		this.view = view;
 		//set the controller (in view) whenever a new CourseController is made
@@ -16,16 +16,11 @@ public class CourseController {
 		view.show();
 	}
 	
-	public void updateCourse(String courseNameNum) {
-		//use split function to separate name and number (allows updateCourse to take only one field)
+	public void updatePage(String content, int i) {
 		
-		//the split courseNameNum will be assigned to courseNum and courseName
-		String courseName = "";
-		String courseNum = "";
 		
 		//use setCourseName and setCourseNumber functions defined in the Course model to populate model variables
-		model.setCourseName(courseName);
-		model.setCourseNumber(courseNum);
+		model.setSection(i, content);
 		
 		//prompt LectureContent view to display updated Course
 		view.show();
