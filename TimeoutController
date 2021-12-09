@@ -1,0 +1,31 @@
+public class TimeoutController implements Runnable {
+
+     Models.ContentModel model;
+     Views.PageView view;
+     
+     public TimeoutController(Models.ContentModel model, Views.PageView view) {
+            this.model = model;
+            this.view = view;
+            view.show();
+      }
+      
+      public void run() {
+            this.timerCountdown();
+      }
+      
+      public void timerCountdown() {
+             int countDown = 60;
+             while (countDown > 0) {
+                   try {
+                        countDown--;
+                        Thread.sleep(1000L);
+                   }
+                   
+                   catch (InterruptedException e) {
+                         view.show();
+                   }
+              }
+         }
+         
+         
+}
