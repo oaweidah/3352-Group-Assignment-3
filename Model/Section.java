@@ -1,21 +1,14 @@
 package models;
 
 public class Section {
-    private int sectionNumber;
-    private String SectionTAName;
-    public int getSectionNumber() {
-        return sectionNumber;
-    }
-    
-    public void setSectionNumber(int sectionNumber) {
-        this.sectionNumber = sectionNumber;
+    private String Content;
+
+    public String getContent() {
+        return Content;
     }
 
-    public String getSectionTAName() {
-        return SectionTAName;
+    public void setContent(String content) {
+        this.Content = content;
     }
     
-    public void setSectionTAName(String sectionTAName) {
-        this.SectionTAName = sectionTAName;
-    }
 }
