@@ -5,16 +5,16 @@ public class Course {
     private String courseNumber;
     private String instructorName;
 
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
-    }
-
     public void setCourseNumber(String courseNumber) {
         this.courseNumber = courseNumber;
     }
 
     public String getCourseNumber() {
         return courseNumber;
+    }
+    
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
     }
 
     public String getCourseName() {
